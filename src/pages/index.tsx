@@ -5,9 +5,11 @@ import { CiCircleCheck } from "react-icons/ci";
 import Rating from "@/componets/website/rating";
 import { useState,useEffect } from "react";
 import Footer from "@/componets/website/footer";
+import { useRouter } from "next/router";
 
 
 export default function Home() {
+  const router = useRouter()
 
   type Review = {
     description: string;
@@ -83,7 +85,7 @@ export default function Home() {
             <Text mt={'2rem'} fontSize={{lg:'24px',md:'24px',sm:'18px',base:'18px'}}  fontWeight={'500'}>Fast, secure, and highly accurate </Text>
             <Text fontSize={{lg:'24px',md:'24px',sm:'18px',base:'18px'}} fontWeight={'500'}>transcription services tailored to meet </Text>
             <Text fontSize={{lg:'24px',md:'24px',sm:'18px',base:'18px'}} fontWeight={'500'}>your demands.</Text>
-             <Button mt={'2rem'} p={'1rem 2rem' } border={'1px solid #FCDC73'}  bg={'transparent'} borderRadius={'12px'}   w={'fit-content'} color={'#FCDC73'} >Get Started Now</Button>
+             <Button onClick={()=>router.push('auth/sign-up')} mt={'2rem'} p={'1rem 2rem' } border={'1px solid #FCDC73'}  bg={'transparent'} borderRadius={'12px'}   w={'fit-content'} color={'#FCDC73'} >Get Started Now</Button>
               
              <Flex>
           
@@ -159,7 +161,7 @@ export default function Home() {
       <Box id="Works" bg={'#121212'}  textColor={'white'} padding={{lg:'5rem 5rem',md:'1.5rem 2rem',sm:'2rem 1rem',base:'2rem 1rem'}}>
           <Heading textAlign={'center'}>How It works</Heading>
 
-          <Flex  flexDir={{lg:'row',md:'row',sm:'column',base:'column'}} mt={'6rem'} justifyContent={'center'} gap={'3rem'}>
+          <Flex  flexDir={{lg:'row',md:'row',sm:'column',base:'column'}} mt={'6rem'} justifyContent={'space-between'} gap={'3rem'}>
             <Box p={'4rem 1.2rem'} borderTop={'2px solid rgba(250, 197, 21, 0.30)'} bg={'rgba(250, 197, 21, 0.02);'} w={{lg:'40%',md:'40%',sm:'100%',base:'100%'}} >
             <Heading fontSize={'25px'} textAlign={'center'} mb={'1rem'}>Accuracy</Heading>
             <Text textAlign={'center'}>Achieve up to 99% precision in your transcriptions. Our advanced AI technology ensures every word and nuance is captured with exceptional clarity and attention to detail
@@ -169,7 +171,7 @@ export default function Home() {
                 <Image src="Rectangle.png" />
             </Box>
           </Flex>
-          <Flex  flexDir={{lg:'row-reverse',md:'row-reverse',sm:'column',base:'column'}} mt={'3rem'} justifyContent={'center'} gap={'3rem'}>
+          <Flex  flexDir={{lg:'row-reverse',md:'row-reverse',sm:'column',base:'column'}} mt={'3rem'} justifyContent={'space-between'} gap={'3rem'}>
             <Box p={'4rem 1.2rem'} borderTop={'2px solid rgba(250, 197, 21, 0.30)'} bg={'rgba(250, 197, 21, 0.02);'} w={{lg:'40%',md:'40%',sm:'100%',base:'100%'}} >
             <Heading fontSize={'25px'} textAlign={'center'} mb={'1rem'}>Accuracy</Heading>
             <Text textAlign={'center'}>Achieve up to 99% precision in your transcriptions. Our advanced AI technology ensures every word and nuance is captured with exceptional clarity and attention to detail
@@ -179,7 +181,7 @@ export default function Home() {
                 <Image src="Rectangle.png" />
             </Box>
           </Flex>
-          <Flex  flexDir={{lg:'row',md:'row',sm:'column',base:'column'}} mt={'3rem'} justifyContent={'center'} gap={'3rem'}>
+          <Flex  flexDir={{lg:'row',md:'row',sm:'column',base:'column'}} mt={'3rem'} justifyContent={'space-between'} gap={'3rem'}>
             <Box p={'4rem 1.2rem'} borderTop={'2px solid rgba(250, 197, 21, 0.30)'} bg={'rgba(250, 197, 21, 0.02);'} w={{lg:'40%',md:'40%',sm:'100%',base:'100%'}} >
             <Heading fontSize={'25px'} textAlign={'center'} mb={'1rem'}>Accuracy</Heading>
             <Text textAlign={'center'}>Achieve up to 99% precision in your transcriptions. Our advanced AI technology ensures every word and nuance is captured with exceptional clarity and attention to detail
@@ -209,8 +211,8 @@ export default function Home() {
         <Text textAlign={'center'}>Lorem ipsum dolor sit amet consectetur. Semper varius ullamcorper tristique e</Text>
 
 
-                <Flex mt={'6rem'} justifyContent={'center'} gap={'3rem'} flexDirection={{lg:'row',md:'column',sm:'column',base:'column'}}>
-                        <Flex flexDir={'column'}
+                <Flex mt={'6rem'} justifyContent={'space-between'} gap={5} flexDirection={{lg:'row',md:'column',sm:'column',base:'column'}}>
+                        <Flex mx={'auto'} flexDir={'column'}
                             maxW="sm"
                             bg={' linear-gradient(180deg, rgba(252, 226, 140, 0.30) 0%, rgba(252, 226, 140, 0.08) 50%, rgba(252, 226, 140, 0.26) 100%);'}
                             boxShadow="lg"
@@ -227,7 +229,7 @@ export default function Home() {
                                 <Heading fontSize={'20px'} fontWeight={'500'} mt={'0.5rem'}>
                                     Enterprise
                                 </Heading>
-                                <Text fontSize="15.6px"  mb={3}>
+                                <Text fontSize="15.6px" color={'rgba(0, 0, 0, 0.80);'} mb={3}>
                                     For large teams & corporations.
                                 </Text>
         
@@ -236,13 +238,13 @@ export default function Home() {
                                     <Heading fontSize="28px" fontWeight="500" lineHeight="1">
                                         $20
                                     </Heading>
-                                    <Text fontSize="sm"  ml={2}>
+                                    <Text fontSize="sm" color="gray.600" ml={2}>
                                         / per month
                                     </Text>
                                 </Flex>
         
                                 {/* Button */}
-                                <Button mx={'auto'} bg={'#0A0A0A'} textColor={'white'} _hover={{bg:'#0A0A0A'}} padding={'1rem 2rem'} mb={6}>
+                                <Button onClick={()=>router.push('auth/sign-up')}  mx={'auto'} bg={'#0A0A0A'} textColor={'white'} _hover={{bg:'#0A0A0A'}} padding={'1rem 2rem'} mb={6}>
                                     Purchase Plan
                                 </Button>
         
@@ -261,7 +263,7 @@ export default function Home() {
                                     ))}
                                 </VStack>
                         </Flex>
-                        <Flex  flexDir={'column'}
+                        <Flex mx={'auto'} flexDir={'column'}
                             maxW="sm"
                             bg={' linear-gradient(180deg, rgba(252, 226, 140, 0.30) 0%, rgba(252, 226, 140, 0.08) 50%, rgba(252, 226, 140, 0.26) 100%);'}
                             boxShadow="lg"
@@ -278,7 +280,7 @@ export default function Home() {
                                 <Heading fontSize={'20px'} fontWeight={'500'} mt={'0.5rem'}>
                                     Enterprise
                                 </Heading>
-                                <Text fontSize="15.6px"  mb={3}>
+                                <Text fontSize="15.6px" color={'rgba(0, 0, 0, 0.80);'} mb={3}>
                                     For large teams & corporations.
                                 </Text>
         
@@ -287,13 +289,13 @@ export default function Home() {
                                     <Heading fontSize="28px" fontWeight="500" lineHeight="1">
                                         $20
                                     </Heading>
-                                    <Text fontSize="sm"  ml={2}>
+                                    <Text fontSize="sm" color="gray.600" ml={2}>
                                         / per month
                                     </Text>
                                 </Flex>
         
                                 {/* Button */}
-                                <Button mx={'auto'} bg={'#0A0A0A'} textColor={'white'} _hover={{bg:'#0A0A0A'}} padding={'1rem 2rem'} mb={6}>
+                                <Button onClick={()=>router.push('auth/sign-up')}  mx={'auto'} bg={'#0A0A0A'} textColor={'white'} _hover={{bg:'#0A0A0A'}} padding={'1rem 2rem'} mb={6}>
                                     Purchase Plan
                                 </Button>
         
@@ -312,7 +314,7 @@ export default function Home() {
                                     ))}
                                 </VStack>
                         </Flex>
-                        <Flex flexDir={'column'}
+                        <Flex mx={'auto'} flexDir={'column'}
                             maxW="sm"
                             bg={' linear-gradient(180deg, rgba(252, 226, 140, 0.30) 0%, rgba(252, 226, 140, 0.08) 50%, rgba(252, 226, 140, 0.26) 100%);'}
                             boxShadow="lg"
@@ -329,7 +331,7 @@ export default function Home() {
                                 <Heading fontSize={'20px'} fontWeight={'500'} mt={'0.5rem'}>
                                     Enterprise
                                 </Heading>
-                                <Text fontSize="15.6px"  mb={3}>
+                                <Text fontSize="15.6px" color={'rgba(0, 0, 0, 0.80);'} mb={3}>
                                     For large teams & corporations.
                                 </Text>
         
@@ -338,13 +340,13 @@ export default function Home() {
                                     <Heading fontSize="28px" fontWeight="500" lineHeight="1">
                                         $20
                                     </Heading>
-                                    <Text fontSize="sm"  ml={2}>
+                                    <Text fontSize="sm" color="gray.600" ml={2}>
                                         / per month
                                     </Text>
                                 </Flex>
         
                                 {/* Button */}
-                                <Button mx={'auto'} bg={'#0A0A0A'} textColor={'white'} _hover={{bg:'#0A0A0A'}} padding={'1rem 2rem'} mb={6}>
+                                <Button onClick={()=>router.push('auth/sign-up')}  mx={'auto'} bg={'#0A0A0A'} textColor={'white'} _hover={{bg:'#0A0A0A'}} padding={'1rem 2rem'} mb={6}>
                                     Purchase Plan
                                 </Button>
         
@@ -369,8 +371,6 @@ export default function Home() {
 
       {/* section 5 */}
       <Box
-      borderTop={'1px solid #FAC515'}
-      borderBottom={'1px solid #FAC515'}
       id="About"
        bg={'black'}
        width="100%"
@@ -378,12 +378,9 @@ export default function Home() {
        bgSize="cover" 
        bgPosition="center"
        bgRepeat="no-repeat"
-       padding={{lg:'7rem 5rem',md:'1.5rem 2rem',sm:' 2rem 1rem',base:'2rem 1rem'}}
+       padding={{lg:'5rem 5rem',md:'1.5rem 2rem',sm:' 2rem 1rem',base:'2rem 1rem'}}
        textColor={'white'}
       >  
-
-      <Heading mb={'4rem'}>What our Customers 
-        <br/>have to say</Heading>
        
        {selectedReview 
        && 
@@ -432,27 +429,10 @@ export default function Home() {
             })}
             </AvatarGroup>
           </Flex>
-     
+          <Footer />
 
       </Box>
       {/* section 5 */}
-
-      {/* footer */}
-      <Box
-      borderTop={'1px solid #FAC515'}
-      borderBottom={'1px solid #FAC515'}
-      id="About"
-       bg={'black'}
-       width="100%"
-       bgImage="url('footer.png')"
-       bgSize="cover" 
-       bgPosition="center"
-       bgRepeat="no-repeat"
-       padding={{lg:'5rem 5rem',md:'1.5rem 2rem',sm:' 2rem 1rem',base:'2rem 1rem'}}
-       textColor={'white'}
-      > 
-          <Footer />
-      </Box>
 
     </Box>
   );
